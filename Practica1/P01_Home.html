@@ -2,8 +2,18 @@
 <html lang="en">
     <head>
         <style>
+            html, body {
+                height: 100%;
+                margin: 0;
+            }
+
             body {
+                min-height: 100vh;
                 background: linear-gradient(to bottom right, #390a67, #2575fc);
+            }
+
+            .navbar {
+                box-shadow: 0 4px 6px rgba(0,0,0,0.3);
             }
         </style>
         <meta charset="UTF-8">
@@ -12,21 +22,35 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 
+        <!-- Aquí se carga el archivo JS personalizado (script.js) -->
+        <script src="script.js" defer></script>
     </head>
     <body>
+
+        <!-- INICIO Navbar -->
         <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
             <div class="container-fluid">
+
+                <!-- Logo (redirecciona a P01_Home.html) -->
                 <a class="navbar-brand" href="P01_Home.html">
                     <img src="assets/CarneDeRes.jpeg" alt="Logo" class="rounded-circle" style="height: 40px; width: 40px; object-fit: cover;">
                 </a>
+
+                <!-- Botón toggler para dispositivos pequeños -->
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
                     <span class="navbar-toggler-icon"></span>
                 </button>
+
+                <!-- Contenido colapsable de la navbar -->
                 <div class="collapse navbar-collapse" id="mynavbar">
                     <ul class="navbar-nav me-auto">
+
+                        <!-- Enlace a la página de tareas -->
                         <li>
                             <a href="P01_Task.html" class="btn btn-dark border-0 text-decoration-none">Tareas</a>
                         </li>
+
+                        <!-- Dropdown de etiquetas -->
                         <li>
                             <div class="btn-group">
                                 <button type="button" class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown">Etiquetas</button>
@@ -35,14 +59,22 @@
                                     <a class="dropdown-item" href="#">Proyectos</a>
                                     <a class="dropdown-item" href="#">Higiene</a>
                                     <a class="dropdown-item" href="#">Trabajo</a>
+
+                                    <!-- Opción para abrir modal de añadir tarea -->
                                     <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#addTaskModal">Añadir Tarea</a>
                                 </div>
                             </div>
                         </li>
                     </ul>
+
+                    <!-- Formulario de búsqueda y botón de cerrar sesión -->
                     <form class="d-flex gap-2">
                         <input class="form-control me-2 bg-white border-white text-dark" type="text" placeholder="Buscar">
+
+                        <!-- Botón Buscar (no envía formulario, solo botón de tipo "button") -->
                         <button class="btn bg-dark border-success text-success" type="button">Buscar</button>
+
+                        <!-- Botón para abrir modal de cierre de sesión -->
                         <button class="btn bg-dark border-dark text-white" title="Cerrar sesión" type="button" data-bs-toggle="modal" data-bs-target="#logoutModal">
                             <i class="fas fa-sign-out-alt"></i>
                         </button>
@@ -50,7 +82,9 @@
                 </div>
             </div>
         </nav>
+        <!-- FIN Navbar -->
 
+        <!-- Modal para confirmar cierre de sesión -->
         <div class="modal fade" id="logoutModal" tabindex="-1" aria-labelledby="logoutModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -63,12 +97,15 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+
+                        <!-- Botón que podría estar vinculado a funcionalidad JS para cerrar sesión -->
                         <button type="button" class="btn btn-primary" id="confirmLogoutBtn">Aceptar</button>
                     </div>
                 </div>
             </div>
         </div>
 
+        <!-- Modal para añadir nueva tarea -->
         <div class="modal fade" id="addTaskModal" tabindex="-1" aria-labelledby="addTaskModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -77,6 +114,8 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
                     </div>
                     <div class="modal-body">
+
+                        <!-- Formulario para crear una nueva tarea con título y color -->
                         <form>
                             <div class="mb-3">
                                 <label for="taskTitle" class="form-label">Nueva tarea</label>
@@ -89,20 +128,139 @@
                         </form>
                     </div>
                     <div class="modal-footer">
+
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+
+                        <!-- Botón para crear la etiqueta/tarea, probablemente vinculado a JS -->
                         <button type="button" class="btn btn-primary">Crear etiqueta</button>
                     </div>
                 </div>
             </div>
         </div>
 
-        <script>
-            document.getElementById('confirmLogoutBtn').addEventListener('click', function() {
-                window.location.href = 'P01_LogIn.html';
-            });
-        </script>
+        <!-- CONTENEDOR PRINCIPAL -->
+        <div class="container my-4">
+            <div class="row g-3">
 
+                <!-- INICIO Tarjeta 1: Resumen Usuario -->
+                <div class="col-6">
+                    <div class="card h-100" style="max-height: 300px; overflow-y: auto;">
+                        <div class="card-header">Resumen Usuario</div>
+                        <div class="card-body">NO HA CHAMBEADO POR HUEVON</div>
+                    </div>
+                </div>
+                <!-- FIN Tarjeta 1 -->
 
+                <!-- INICIO Tarjeta 2: Tareas de hoy -->
+                <div class="col-6">
+                    <div class="card h-100" style="max-height: 300px; overflow-y: auto;">
+                        <div class="card-header mb-2">Tareas de hoy</div>
+
+                        <!-- Cabecera de tabla/tareas con icono y títulos -->
+                        <div class="alert alert-primary mb-1 py-2">
+                            <div class="row align-items-center text-center">
+                                <div class="col-3 text-start">
+                                    <input type="checkbox" class="form-check-input task-check" data-task-id="task2">
+                                </div>
+
+                                <div class="col-3 text-start">
+                                    <strong class="task-title" id="task2">Comprar pan</strong>
+                                </div>
+
+                                <div class="col-3 text-start">
+                                    Hogar
+                                </div>
+
+                                <div class="col-3 text-start">
+                                    2025-09-07
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Una tarea específica con checkbox -->
+                        <div class="alert alert-primary mb-1 py-2">
+                            <div class="row align-items-center text-center">
+                                <div class="col-3 text-start">
+                                    <input type="checkbox" class="form-check-input task-check" data-task-id="task1">
+                                </div>
+
+                                <div class="col-3 text-start">
+                                    <strong class="task-title" id="task2">Comprar pan</strong>
+                                </div>
+
+                                <div class="col-3 text-start">
+                                    Hogar
+                                </div>
+
+                                <div class="col-3 text-start">
+                                    2025-09-07
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- FIN Tarjeta 2 -->
+
+                <!-- INICIO Tarjeta 3: Tareas pendientes por etiqueta -->
+                <div class="col-6">
+                    <div class="card h-100" style="max-height: 300px; overflow-y: auto;">
+                        <div class="card-header mb-2">Tareas pendientes por etiqueta</div>
+
+                        <!-- Cabecera de la tabla de tareas pendientes -->
+                        <div class="alert alert-warning mb-0 mt-0 py-2">
+                            <div class="alert alert-warning mb-0 mt-0 py-2">
+                                <div class="row align-items-center text-center">
+                                    <div class="col-3 text-start">
+                                        <i class="fas fa-check-circle text-success fs-5"></i>
+                                    </div>
+
+                                    <div class="col-3 text-start">
+                                        <strong>Tarea 1</strong>
+                                    </div>
+
+                                    <div class="col-3 text-start"><strong>Etiqueta</strong></div>
+
+                                    <div class="col-3 text-start"><strong>Fecha</strong></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Tarea pendiente con checkbox -->
+                        <div class="alert alert-warning mb-1 py-2">
+                            <div class="row align-items-center text-center">
+                                <div class="col-3 text-start">
+                                    <input type="checkbox" class="form-check-input task-check" data-task-id="task1">
+                                </div>
+
+                                <div class="col-3 text-start">
+                                    <strong class="task-title" id="task1">Comprar pan</strong>
+                                </div>
+
+                                <div class="col-3 text-start">
+                                    Hogar
+                                </div>
+
+                                <div class="col-3 text-start">
+                                    2025-09-07
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- FIN Tarjeta 3 -->
+
+                <!-- INICIO Tarjeta 4: Tareas terminadas -->
+                <div class="col-6">
+                    <div class="card h-100">
+                        <div class="card-header">Tareas terminadas</div>
+                        <div class="card-body">NO HA CHAMBEADO POR HUEVON</div>
+                    </div>
+                </div>
+                <!-- FIN Tarjeta 4 -->
+
+            </div>
+        </div>
+        <!-- FIN Contenedor principal -->
 
     </body>
 </html>
