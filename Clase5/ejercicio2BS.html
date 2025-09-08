@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <title>Ejercicio 2 BS</title>
+  </head>
+  <body class="bg-black text-white">
+
+  <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="javascript:void(0)">Navbar</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mynavbar">
+        <ul class="navbar-nav me-auto">
+          <li class="btn btn-dark border-none">
+            inicio
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="javascript:void(0)">Link A</a>
+          </li>
+          <li>
+            <div class="btn-group">
+              <button type="button" class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown">Dropdown</button>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">Instagram</a>
+                <a class="dropdown-item" href="#">LinkedInn</a>
+                <a class="dropdown-item" href="#">Twitter</a>
+              </div>
+            </div>
+          </li>
+        </ul>
+        <form class="d-flex">
+          <input class="form-control me-2 bg-black border-white text-white" type="text" placeholder="Search">
+          <button class="btn bg-dark border-success text-success" type="button">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+  <form action="/action_page.php">
+      <div class="mb-3 mt-3">
+        <label for="email" class="form-label">Email:</label>
+        <input type="email" class="form-control bg-black text-white border-white" id="email" placeholder="Enter email" name="email">
+      </div>
+      <div class="mb-3">
+        <label for="pwd" class="form-label text-white">Password:</label>
+        <input type="password" class="form-control bg-black text-white border-white" id="pwd" placeholder="Enter password" name="pswd">
+      </div>
+      <div class="form-check mb-3">
+        <label class="form-check-label">
+          <input class="form-check-input bg-black text-white border-white" type="checkbox" name="remember"> Remember me
+        </label>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button><br><br>
+
+      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">
+        Aquí <strong>NO</strong> hay un modal
+      </button>
+    <div class="modal" id="myModal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title text-dark">¿Qué miras</h4>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+          <div class="modal-body text-dark">
+            No confiaste en mi :'v
+          </div>
+
+          <!-- Modal footer -->
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Guardar</button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    </form>
+
+  </body>
+</html>

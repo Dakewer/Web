@@ -1,0 +1,45 @@
+*{
+    border: 3px dashed red;
+}
+p{
+    border: 3px dotted blue;
+}
+#dos{
+    display: inline;
+}
+#tres{
+    display: inline-block;
+    width: 200px;
+    height: 100px;
+}
+#h:hover ~ p{
+    display: none;
+}
+div{
+    padding: 10px;
+    border: 3px dashed red;
+    margin: 15px;
+}
+#div1{
+    background-color: lightblue;
+}
+#div1:hover{
+    background-color: deepskyblue;
+    border: 3px dashed yellowgreen;
+    position:relative;
+    left: 10px;
+    top: 10px;
+}
+#div2{
+    background-color: lightcoral;
+    position: absolute;
+    left: 150px;
+    top: 170px;
+    z-index: 1;
+}
+#div3{
+    background-color: lightgreen;
+    position: fixed;
+    left: 110px;
+    top: 200px;
+}

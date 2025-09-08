@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Amazon México</title>
+        <style>
+            html, body {
+                margin: 0;
+                padding: 0;
+                width: 100%;
+            }
+
+            * {
+                box-sizing: border-box;
+            }
+            .header {
+                background-color: #0f1111;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                color: white;
+                width: 100%;
+                height: 70px;
+                padding: 0 20px;
+            }
+
+            .headerLeft {
+                display: flex;
+                align-items: center;
+            }
+
+            .logo img {
+                width: 120px;
+            }
+
+            .headerCenter {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 0;
+                background-color: #ffffff;
+                padding: 5px;
+                border-radius: 5px;
+                width: auto;
+            }
+
+            .searchBar {
+                margin-left: 10px;
+                padding: 12px;
+                width: 400px;
+                border: none;
+                border-radius: 5px;
+                font-size: 16px;
+                outline: none;
+                box-sizing: border-box;
+            }
+
+            .searchButton {
+                background-color: #f8bd19;
+                color: white;
+                padding: 12px;
+                border: none;
+                border-radius: 3px;
+                font-size: 16px;
+                cursor: pointer;
+                box-sizing: border-box;
+            }
+
+            .searchButton:hover {
+                background-color: #f8bd19;
+            }
+
+            select {
+                padding: 12px;
+                font-size: 16px;
+                border-radius: 5px;
+                border: none;
+                cursor: pointer;
+            }
+
+            .headerRight {
+                display: flex;
+                align-items: center;
+            }
+
+            .account-link, .cart-link {
+                color: white;
+                text-decoration: none;
+                margin-left: 20px;
+                font-size: 14px;
+                font-weight: bold;
+            }
+
+            .account-link:hover, .cart-link:hover {
+                color: #f0b90b;
+            }
+            .contenedor {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                padding: 20px;
+                gap: 20px;
+            }
+
+            .producto {
+                width: calc(20% - 20px);
+                padding: 20px;
+                background-color: #fff;
+                border-radius: 8px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                text-align: center;
+            }
+
+            .imagenProducto {
+                width: 100%;
+                height: auto;
+                border-radius: 8px;
+            }
+
+            .nombreProducto {
+                font-size: 1.2rem;
+                font-weight: bold;
+                margin: 10px 0;
+            }
+
+            .precio {
+                font-size: 1rem;
+                color: #000000;
+                font-weight: bold;
+                margin: 5px 0;
+            }
+
+            .fechaLlegada {
+                font-size: 0.9rem;
+                color: gray;
+                margin-top: 10px;
+            }
+            @media (max-width: 1200px) {
+                .producto {
+                    width: calc(25% - 20px);
+                }
+            }
+
+            @media (max-width: 900px) {
+                .producto {
+                    width: calc(33.33% - 20px);
+                }
+            }
+
+            @media (max-width: 600px) {
+                .producto {
+                    width: calc(50% - 20px);
+                }
+            }
+
+            @media (max-width: 400px) {
+                .producto {
+                    width: 100%;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <header class="header">
+            <div class="headerLeft">
+                <a href="#" class="logo">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Png-transparent-amazon-dark-hd-logo-removebg-preview.png/640px-Png-transparent-amazon-dark-hd-logo-removebg-preview.png" alt="Amazon Logo">
+                </a>
+            </div>
+            <div class="headerCenter">
+                <select name="libros">
+                    <option value="0">Libros</option>
+                    <option value="1">Celulares</option>
+                    <option value="2">Hogar</option>
+                    <option value="3">Ropa</option>
+                    <option value="4">Amazon basics</option>
+                </select>
+                <input type="text" class="searchBar" placeholder="Buscar productos, marcas y más...">
+                <button class="searchButton">🔎</button>
+            </div>
+            <div class="headerRight">
+                <a href="#" class="account-link">Hola, Iniciar sesión</a>
+                <a href="#" class="cart-link">Carrito 🛒</a>
+            </div>
+        </header>
+        <h2>Productos relacionados</h2>
+        <div class="contenedor">
+            <div class="producto">
+                <img src="https://images-na.ssl-images-amazon.com/images/I/61vJOgQA8DL._AC_UL165_SR165,165_.jpg" alt="producto1" class="imagenProducto">
+                <h3 class="nombreProducto">
+                    <a href="https://www.amazon.com.mx/Call-Cthulhu-Rpg-Keeper-Rulebook/dp/1568824300/ref=pd_sim_d_sccl_2_4/134-8404530-5937458?pd_rd_w=voJcH&content-id=amzn1.sym.c12b16ca-b8cf-49ac-b73c-e104d90376af&pf_rd_p=c12b16ca-b8cf-49ac-b73c-e104d90376af&pf_rd_r=DQZ9C8CM8EH5CDA9EBVQ&pd_rd_wg=VUURn&pd_rd_r=7ffb28e8-e27a-42cc-97d5-16cc363839ae&pd_rd_i=1568824300&psc=1" target="_blank">
+                        Call of Cthulhu Rpg Keeper Rulebook
+                    </a>
+                </h3>
+                <p class="precio">$875.02</p>
+                <p>⭐⭐⭐⭐⭐</p>
+                <p class="fechaLlegada">Llega en 3 días</p>
+            </div>
+            <div class="producto">
+                <img src="https://images-na.ssl-images-amazon.com/images/I/51Wwc4VB6tL._AC_UL165_SR165,165_.jpg" alt="producto2" class="imagenProducto">
+                <h3 class="nombreProducto">
+                    <a href="https://www.amazon.com.mx/Call-Cthulhu-Keeper-Screen-Roleplaying/dp/1568824106/ref=pd_sim_d_sccl_2_2/134-8404530-5937458?pd_rd_w=AIcgr&content-id=amzn1.sym.c12b16ca-b8cf-49ac-b73c-e104d90376af&pf_rd_p=c12b16ca-b8cf-49ac-b73c-e104d90376af&pf_rd_r=P3K2743EJA1P870K5GGM&pd_rd_wg=LoEg8&pd_rd_r=5bfc96f8-c9e1-488d-9bcf-0d1fa1861da5&pd_rd_i=1568824106&psc=1" target="_blank">
+                        Call of Cthulhu Keeper Screen
+                    </a>
+                </h3>
+                <p class="precio">$639.55</p>
+                <p>⭐⭐⭐⭐</p>
+                <p>Envio GRATIS en pedidos elegidos</p>
+            </div>
+            <div class="producto">
+                <img src="https://images-na.ssl-images-amazon.com/images/I/71heAw-eVgL._AC_UL165_SR165,165_.jpg" alt="producto3" class="imagenProducto">
+                <h3 class="nombreProducto">
+                    <a href="https://www.amazon.com.mx/Investigators-Handbook-Sandy-Petersen/dp/1568824491/ref=pd_sim_d_sccl_2_1/134-8404530-5937458?pd_rd_w=AIcgr&content-id=amzn1.sym.c12b16ca-b8cf-49ac-b73c-e104d90376af&pf_rd_p=c12b16ca-b8cf-49ac-b73c-e104d90376af&pf_rd_r=P3K2743EJA1P870K5GGM&pd_rd_wg=LoEg8&pd_rd_r=5bfc96f8-c9e1-488d-9bcf-0d1fa1861da5&pd_rd_i=1568824491&psc=1" target="_blank">
+                        Investigator's Handbook
+                    </a>
+                </h3>
+                <p class="precio">$693.79</p>
+                <p>⭐⭐⭐⭐⭐</p>
+                <p>Recibelo el sep 6 - 10</p>
+            </div>
+            <div class="producto">
+                <img src="https://images-na.ssl-images-amazon.com/images/I/61aMbF2TCML._AC_UL165_SR165,165_.jpg" alt="producto4" class="imagenProducto">
+                <h3 class="nombreProducto">
+                    <a href="https://www.amazon.com.mx/Pulp-Cthulhu-Two-Fisted-Adventure-Against/dp/1568820917/ref=pd_sim_d_sccl_2_5/134-8404530-5937458?pd_rd_w=AIcgr&content-id=amzn1.sym.c12b16ca-b8cf-49ac-b73c-e104d90376af&pf_rd_p=c12b16ca-b8cf-49ac-b73c-e104d90376af&pf_rd_r=P3K2743EJA1P870K5GGM&pd_rd_wg=LoEg8&pd_rd_r=5bfc96f8-c9e1-488d-9bcf-0d1fa1861da5&pd_rd_i=1568820917&psc=1" target="_blank">
+                        Pulp Cthulhu: Two-Fisted Action and Adventure Against the Mythos
+                    </a>
+                </h3>
+                <p class="precio">$754.03</p>
+                <p>⭐⭐⭐⭐</p>
+                <p>Envio GRATIS en pedidos elegidos</p>
+            </div>
+            <div class="producto">
+                <img src="https://images-na.ssl-images-amazon.com/images/I/71NP0e4NwZL._AC_UL165_SR165,165_.jpg" alt="producto5" class="imagenProducto">
+                <h3 class="nombreProducto">
+                    <a href="https://www.amazon.com.mx/Cults-Cthulhu-Mike-Mason/dp/B09YVVMP8P/ref=pd_sim_d_sccl_2_4/134-8404530-5937458?pd_rd_w=AIcgr&content-id=amzn1.sym.c12b16ca-b8cf-49ac-b73c-e104d90376af&pf_rd_p=c12b16ca-b8cf-49ac-b73c-e104d90376af&pf_rd_r=P3K2743EJA1P870K5GGM&pd_rd_wg=LoEg8&pd_rd_r=5bfc96f8-c9e1-488d-9bcf-0d1fa1861da5&pd_rd_i=B09YVVMP8P&psc=1" target="_blank">
+                        Cults of Cthulhu
+                    </a>
+                </h3>
+                <p class="precio">$908.47</p>
+                <p>⭐⭐⭐</p>
+                <p>Envio GRATIS en pedidos elegidos</p>
+            </div>
+        </div>
+
+    </body>
+</html>

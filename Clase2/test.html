@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Hola HTML</title>
+    </head>
+    <body>
+        <h1>Sesión 2</h1>
+        <p>Aquí pondré mi <b>trabajo</b> de la sesión de hoy</p>
+
+        <h3>Sección 1:</h3>
+        <p>Esto es una <u>lista</u> ordenada:</p>
+        <ol>
+            <li>Elemento 1</li>
+            <li>Elemento 2</li>
+            <li>Elemento 3</li>
+        </ol>
+
+        <p>Esto es una <u>lista</u> desordenada:</p>
+
+        <ul>
+            <li>Elemento 1</li>
+            <li>Elemento 2</li>
+            <li>Elemento 3</li>
+        </ul>
+
+        <h3>Sección 2:</h3>
+        <p>Aquí pondré una <b>imagen</b> bien bonita:</p>
+        <img src="images/ZetaGundam.jpg" alt = "Autismo">
+
+        <h3>Sección 3:</h3>
+        <p>Aquí pondré unos <b>links</b> bonitos</p>
+        <a href="#">Enlace a la misma página</a> <br>
+        <a href="http://google.com"> Link a otra página</a> <br>
+        <a href="http://google.com" target="_blank"> Enlace en otra pestaña</a> <br>
+        <a href="mailto: david.paez@iteso.mx?subject=Hola%20a%20Todos"> Mandar correo</a> <br>
+        <a href="tel:+57 3 12345678"> Marcar a +57 3 12345678 </a> <br>
+        <a href="javascript:alert('javascript');"> Ejecutar Javascript</a>
+
+        <h3>Sección 4:</h3>
+        <p>Aquí pondré unas <b>tablas</b> NO bonitas :(</p>
+        <p>Esto es una tabla básica:</p>
+        <table border ="1">
+            <tr>
+                <td>Celda (1,1)</td>
+                <td>Celda (1,2)</td>
+            </tr>
+            <tr>
+                <td>Celda (2,1)</td>
+                <td>Celda (2,2)</td>
+            </tr>
+            <tr>
+                <td>Celda (3,1)</td>
+                <td>Celda (3,2)</td>
+            </tr>
+        </table>
+        <p>Esto es una tabla más chida:</p>
+        <table border = "1" width="80%" cellspacing="10">
+            <tr>
+                <th colspan="2">Título 1</th>
+            </tr>
+            <tr>
+                <td rowspan="2" width="70%">Celda (1,1)</td>
+                <td>Celda (1,2)</td>
+            </tr>
+            <tr>
+                <td>Celda (2,1)</td>
+            </tr>
+        </table>
+
+        <h3>Sección 5:</h3>
+        <p>Aquí haré un <b>formulario</b> Tengo miedo!_!</p>
+        <p>Esto es un fórmulario básico:</p>
+        <form action="javascript:alert('Guardado')">
+            <label for="nombre">Nombre:</label>
+            <input type="text" name="nombre" id="nombre"> <br>
+
+            <label for="apellido">Apellido:</label>
+            <input type="text" name="apellido" id="apellido"> <br>
+
+            <label for="comentarios">Comentarios:</label><br>
+            <textarea name="comentarios" id="comentarios" rows="5" cols="50">
+                Valor por defecto muy grande
+            </textarea> <br>
+
+            <input type="submit" value="Enviar">
+        </form>
+        <p>Formulario con varios tipos de datos:</p>
+    <form action="javascript:alert('Guardado')">
+        Usuario:
+        <input type="text" name="usuario" id="usuario"> <br>
+        Contraseña:
+        <input type="password" name="password" id="password"> <br>
+        Número:
+        <input type="number" name="numero" id="numero"> <br>
+        Correo:
+        <input type="email" name="correo" id="correo"> <br>
+        Archivo:
+        <input type="file" name="archivo" id="archivo"> <br>
+        Color:
+        <input type="color" name="color" value="0000ff"> <br>
+        Fecha:
+        <input type="date" name="fecha" value="2005-02-11"> <br>
+        Mes:
+        <input type="month" name="mes"> <br>
+        Hora:
+        <input type="time" name="hora"> <br>
+        Checkboxes: <br>
+        <input type="checkbox" name="check" value="check1">
+        Checkbox1
+        <input type="checkbox" name="check" value="check2">
+        Checkbox2
+        <input type="checkbox" name="check" value="check3" checked>
+        Checkbox3 <br>
+        Radios: <br>
+        <input type="radio" name="radio" value="t1">
+        Radio1 <br>
+        <input type="radio" name="radio" value="t2">
+        Radio2 <br>
+        Rango:
+        <input type="range" name="points" min="0" max="10"> <br>
+        Botón:
+        <input type="button" value="Picale" onclick="alert('Hola mundo!')"> <br>
+        Selector: <br>
+    </form>
+
+    </body>
+</html>
