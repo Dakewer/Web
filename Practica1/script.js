@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (checkbox.checked) {
             taskTitle.style.textDecoration = 'line-through';
-            taskTitle.style.color = 'gray';  // Opcional para dar más feedback visual
+            taskTitle.style.color = 'gray';
         } else {
             taskTitle.style.textDecoration = 'none';
             taskTitle.style.color = 'inherit';
