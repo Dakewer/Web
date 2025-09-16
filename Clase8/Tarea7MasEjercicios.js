@@ -103,11 +103,9 @@ console.log("Arreglo sorteado\n");
 arregloTarea.sort(function (a, b) {return a.clave - b.clave; });
 console.table(arregloTarea);
 
-const opcion = prompt("Elige una opción\n"
-+ "T - la suma total de palabras\n"
-+ "P - ver el promedio de palabras\n"
-+ "MX - el libro con más palabras y cuantas\n"
-+ "MN - el libro con menos palabras y cuantas\n").toUpperCase()
+const opciones = ["T", "P", "MX", "MN"];
+const opcion = opciones[getRndInteger(0, 3)];
+console.log("Valor de opcion " + opcion);
 
 switch (opcion) {
     case "T":
@@ -123,7 +121,7 @@ switch (opcion) {
         for(let i in arregloTarea){
             count += arregloTarea[i].numeroPalabras;
         }
-        console.log("El promedio de palabras: " + count/20);
+        console.log("El promedio de palabras: " + count/arregloTarea.length);
         break;
 
     case "MX":
