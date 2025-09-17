@@ -1,0 +1,22 @@
+### GET request to example server
+GET https://examples.http-client.intellij.net/get
+    ?generated-in=WebStorm
+
+###
+GET http://jsonplaceholder.typicode.com/users
+
+###
+GET http://jsonplaceholder.typicode.com/users/10
+
+###
+GET http://jsonplaceholder.typicode.com/users/100
+
+###
+POST http://jsonplaceholder.typicode.com/users HTTP/1.1
+content-type: application/json
+
+{
+    "name": "David Páez",
+    "usermane": "dakewer"
+}
+
