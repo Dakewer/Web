@@ -1,5 +1,8 @@
 function getNextUserID(){
-    return 1;
+    if (!getNextUserID.counter) {
+        getNextUserID.counter = 1;
+    }
+    return getNextUserID.counter++;
 }
 
 class UserException{

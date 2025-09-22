@@ -1,5 +1,8 @@
 function getNextTaskID(){
-    return 1;
+    if (!getNextTaskID.counter) {
+        getNextTaskID.counter = 1;
+    }
+    return getNextTaskID.counter++;
 }
 
 class TaskException{
@@ -47,5 +50,68 @@ class Task{
         this.#tags = tags;
     }
 
+    get taskID(){
+        return this.#taskID;
+    }
 
+    set taskID(taskID){
+        throw new TaskException("ID's are auto-generated.");
+    }
+    get title(){
+        return this.#title;
+    }
+    set title(title){
+        if(!title || title.trim() === ""){
+            throw new TaskException("Se requiere un título");
+        } else{
+            this.#title = title;
+        }
+    }
+    get description(){
+        return this.#description;
+    }
+
+    set description(description){
+        this.#description = description;
+    }
+    get dueDate(){
+        return this.#dueDate;
+    }
+    set dueDate(date){
+        if(!isDateValid(dueDate)){
+            throw new TaskException("Se requiere una fecha valida");
+        } else{
+            this.#dueDate = date;
+        }
+    }
+    get owner(){
+        return this.#owner;
+    }
+    set owner(owner){
+        if(!User.#usedEmail.has(owner)){
+            throw new TaskException("El usuario no está registrado");
+        } else{
+            this.#owner = owner;
+        }
+    }
+    get status(){
+        return this.#status;
+    }
+    set status(status){
+        if(status !== "A" || status !== "F" || status !== "C"){
+            throw new TaskException("No se reconoce este estatus");
+        } else{
+            this.#status = status;
+        }
+    }
+    get tags(){
+        return this.#tags;
+    }
+    set tags(tags){
+        if(Object.is(tags, Array)){
+            throw new TaskException("Tags debe ser un array");
+        } else{
+            this.#tags = tags;
+        }
+    }
 }
