@@ -19,9 +19,8 @@ class Tag{
     constructor(name, color){
         // Línea 19 sacada de GeeksForGeeks:
         // https://www.geeksforgeeks.org/javascript/javascript-check-if-a-string-is-a-valid-hex-color-representation/
-        let Reg_Exp = /(^#[0-9A-F]{6}$)|(^#[0-9A-F]{3}$)/i;
+        const Reg_Exp = /(^#[0-9A-F]{6}$)|(^#[0-9A-F]{3}$)/i;
 
-        this.id = getNextTagID();
         if(!name || name.trim() === ""){
             throw new TagException("Se requiere un nombre");
         }
@@ -36,7 +35,7 @@ class Tag{
     }
 
     get id(){
-        return this.id;
+        return this.#id;
     }
 
     set id(value){
@@ -44,21 +43,21 @@ class Tag{
     }
 
     get name(){
-        return this.name;
+        return this.#name;
     }
-    set name(value){
+    set name(name){
         if(!name || name.trim() === ""){
             throw new TagException("Se requiere un nombre");
         }
-        this.#name = value;
+        this.#name = name;
     }
     get color(){
         return this.#color;
     }
-    set color(value){
+    set color(color){
         if(!Reg_Exp.test(color)){
             throw new TagException("Ingrese un color válido");
         }
-        this.#color = value;
+        this.#color = color;
     }
 }

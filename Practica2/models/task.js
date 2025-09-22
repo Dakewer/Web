@@ -25,19 +25,19 @@ class Task{
     #tags
 
     constructor(title, description, dueDate, owner, status, tags){
+        if(!Task.validUsers || !Task.validUsers.has(owner)){
+            throw new TaskException("El usuario no está registrado");
+        }
         if(!title || title.trim() === ""){
             throw new TaskException("Se requiere un título");
         }
         if(!isDateValid(dueDate)){
             throw new TaskException("Se requiere una fecha valida");
         }
-        if(!User.#usedEmail.has(owner)){
-            throw new TaskException("El usuario no está registrado");
-        }
-        if(status !== "A" || status !== "F" || status !== "C"){
+        if(status !== "A" && status !== "F" && status !== "C"){
             throw new TaskException("No se reconoce este estatus");
         }
-        if(Object.is(tags, Array)){
+        if(!Array.isArray(tags)){
             throw new TaskException("Tags debe ser un array");
         }
 
@@ -78,7 +78,7 @@ class Task{
         return this.#dueDate;
     }
     set dueDate(date){
-        if(!isDateValid(dueDate)){
+        if(!isDateValid(date)){
             throw new TaskException("Se requiere una fecha valida");
         } else{
             this.#dueDate = date;
@@ -88,11 +88,7 @@ class Task{
         return this.#owner;
     }
     set owner(owner){
-        if(!User.#usedEmail.has(owner)){
-            throw new TaskException("El usuario no está registrado");
-        } else{
-            this.#owner = owner;
-        }
+        this.#owner = owner;
     }
     get status(){
         return this.#status;

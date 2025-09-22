@@ -21,7 +21,7 @@ class User{
     #joinedAt;
 
     constructor(userName, email, password){
-        if(!userName || name.trim() === ""){
+        if(!userName || userName.trim() === ""){
             throw new UserException("El nombre es requerido");
         }
         if(!email || email.trim() === ""){
@@ -55,7 +55,7 @@ class User{
     }
 
     set userName(userName){
-        if(!userName || name.trim() === ""){
+        if(!userName || userName.trim() === ""){
             throw new UserException("El nombre es requerido");
         } else{
             this.#userName = userName;
