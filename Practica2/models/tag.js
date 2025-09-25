@@ -1,3 +1,7 @@
+// Línea 3 sacada de GeeksForGeeks:
+// https://www.geeksforgeeks.org/javascript/javascript-check-if-a-string-is-a-valid-hex-color-representation/
+const Reg_Exp = /(^#[0-9A-F]{6}$)|(^#[0-9A-F]{3}$)/i;
+
 function getNextTagID(){
     if (!getNextTagID.counter) {
         getNextTagID.counter = 1;
@@ -12,15 +16,13 @@ class TagException{
 }
 
 class Tag{
+    static validTags = new Set(); // Inicializar como Set vacío
+
     #id;
     #name;
     #color;
 
     constructor(name, color){
-        // Línea 19 sacada de GeeksForGeeks:
-        // https://www.geeksforgeeks.org/javascript/javascript-check-if-a-string-is-a-valid-hex-color-representation/
-        const Reg_Exp = /(^#[0-9A-F]{6}$)|(^#[0-9A-F]{3}$)/i;
-
         if(!name || name.trim() === ""){
             throw new TagException("Se requiere un nombre");
         }

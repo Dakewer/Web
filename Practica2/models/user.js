@@ -34,7 +34,7 @@ class User{
         }
 
         this.#userID = getNextUserID();
-        this.#userName = name
+        this.#userName = userName
         this.#email = email.toLowerCase();
         this.#password = password;
         this.#joinedAt = new Date();

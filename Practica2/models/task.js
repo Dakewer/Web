@@ -16,6 +16,17 @@ function isDateValid(dateStr) {
 }
 
 class Task{
+    static validUsers = new Set();
+    static validTasks = new Set();
+
+    static setValidUsers(usersSet) {
+        Task.validUsers = usersSet;
+    }
+
+    static setValidTags(tagsSet) {
+        Task.validTags = tagsSet;
+    }
+
     #taskID;
     #title;
     #description;
@@ -39,6 +50,12 @@ class Task{
         }
         if(!Array.isArray(tags)){
             throw new TaskException("Tags debe ser un array");
+        }
+        if (Task.validTags && Task.validTags.size > 0) {
+            const invalidTags = tags.filter(tagId => !Task.validTags.has(tagId));
+            if (invalidTags.length > 0) {
+                throw new TaskException(`Los siguientes tags no existen: ${invalidTags.join(', ')}`);
+            }
         }
 
         this.#taskID = getNextTaskID();
@@ -94,7 +111,7 @@ class Task{
         return this.#status;
     }
     set status(status){
-        if(status !== "A" || status !== "F" || status !== "C"){
+        if(status !== "A" && status !== "F" && status !== "C"){
             throw new TaskException("No se reconoce este estatus");
         } else{
             this.#status = status;
@@ -104,10 +121,17 @@ class Task{
         return this.#tags;
     }
     set tags(tags){
-        if(Object.is(tags, Array)){
+        if(!Array.isArray(tags)){
             throw new TaskException("Tags debe ser un array");
-        } else{
-            this.#tags = tags;
         }
+
+        if (Task.validTags && Task.validTags.size > 0) {
+            const invalidTags = tags.filter(tagId => !Task.validTags.has(tagId));
+            if (invalidTags.length > 0) {
+                throw new TaskException(`Los siguientes tags no existen: ${invalidTags.join(', ')}`);
+            }
+        }
+
+        this.#tags = tags;
     }
 }
